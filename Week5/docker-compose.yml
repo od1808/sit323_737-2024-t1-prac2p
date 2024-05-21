@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: joelb101/nodewebapp
+    ports:
+      - '3050:3050'
+    environment:
+      - PORT=3050
+    container_name: server
+    networks:
+      - my-net
+
+  app1:
+    build: .
+    image: joelb101/nodewebapp
+    ports:
+      - '3050:3050'
+    environment:
+      - PORT=3050
+    container_name: server
+    networks:
+      - my-net
+
+
+networks:
+  my-net:
+    driver: bridge
+    
